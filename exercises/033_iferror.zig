@@ -4,11 +4,11 @@
 //
 //     if (foo) |value| {
 //
-//         // foo was NOT an error; value is the non-error value of foo
+// foo was NOT an error; value is the non-error value of foo
 //
 //     } else |err| {
 //
-//         // foo WAS an error; err is the error value of foo
+// foo WAS an error; err is the error value of foo
 //
 //     }
 //
@@ -40,6 +40,7 @@ pub fn main() void {
         } else |err| switch (err) {
             MyNumberError.TooBig => std.debug.print(">4. ", .{}),
             // Please add a match for TooSmall here and have it print: "<4. "
+            MyNumberError.TooSmall => std.debug.print("<4. ", .{}),
         }
     }
 
